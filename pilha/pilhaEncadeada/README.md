@@ -1,6 +1,6 @@
 # Pilha Encadeada
 
-Confira a implementação de uma [pilha encadeada]() em C++.
+Confira a implementação de uma [pilha encadeada](pilhaEncadeada.cpp) em C++.
 
 ## Detalhes da implementação
 
