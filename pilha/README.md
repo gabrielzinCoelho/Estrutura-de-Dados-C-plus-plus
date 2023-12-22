@@ -2,8 +2,8 @@
 
 ## Tópicos
 
-* [Pilha encadeada] (github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha/pilhaEncadeada)
-* [Pilha em array] (github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha/pilhaArr)
+* [Pilha encadeada](github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha/pilhaEncadeada)
+* [Pilha em array](github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha/pilhaArr)
 
 ## Definição e Visão Geral
 
