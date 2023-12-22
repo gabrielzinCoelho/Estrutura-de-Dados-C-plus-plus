@@ -9,7 +9,7 @@
 
 ### O que é?
 
-**Pilhas** são estruturas de dados em que os elementos pertencentes são ligados em uma determinada sequência e é permitido o **acesso à apenas uma das extremidades**.
+**Pilhas** são estruturas de dados em que os elementos pertencentes são ligados em uma determinada sequência e é permitido o **acesso a apenas uma das extremidades**.
 
 Baseada no princípio **"Last In First Out"** (Último a entrar, primeiro a sair), o acesso à pilha deve ser sempre feito pelo **topo**.
 

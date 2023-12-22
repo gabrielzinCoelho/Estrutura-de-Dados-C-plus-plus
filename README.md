@@ -8,5 +8,5 @@ Todos códigos foram baseados nas aulas e materiais disponibilizados pelos docen
 
 Estrutura de Dados | Tópicos
 :-- | :--:
-[Pilhas](https://github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha) | 
-[Filas](https://github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/fila) |
+[Pilhas](github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/pilha) | 
+[Filas](github.com/gabrielzinCoelho/Estrutura-de-Dados-C-plus-plus/tree/main/fila) |
