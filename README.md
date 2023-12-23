@@ -10,4 +10,4 @@ Estrutura de Dados | Tópicos
 :-- | :--:
 [Pilhas](pilha) | [Pilhas Encadeadas](pilha/pilhaEncadeada) [Pilhas em Arrays](pilha/pilhaArr)
 [Filas](fila) | [Filas Encadeadas](fila/filaEncadeada/) [Filas em Arrays (Circulares)](fila/filaArr/)
-[Heaps](heap) | [MaxHeaps](heap/maxheap) [MinHeaps](heap/minHeap) [Torneios](heap/torneio)
+[Heaps](heap) | [MaxHeaps](heap/maxHeap) [MinHeaps](heap/minHeap) [Torneios](heap/torneio)
