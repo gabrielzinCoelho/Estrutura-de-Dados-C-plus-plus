@@ -3,7 +3,7 @@
 ## Tópicos
 
 * [Fila encadeada](filaEncadeada)
-* [Fila em array](filaArr)
+* [Fila em array (circular)](filaArr)
 
 ## Definição e Visão Geral
 
