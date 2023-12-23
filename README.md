@@ -9,4 +9,4 @@ Todos códigos foram baseados nas aulas e materiais disponibilizados pelos docen
 Estrutura de Dados | Tópicos
 :-- | :--:
 [Pilhas](pilha) | [Pilhas Encadeadas](pilha/pilhaEncadeada) [Pilhas em Arrays](pilha/pilhaArr)
-[Filas](fila) |
+[Filas](fila) | [Filas Encadeadas](fila/filaEncadeada/) [Filas em Arrays (Circulares)](fila/filaArr/)
