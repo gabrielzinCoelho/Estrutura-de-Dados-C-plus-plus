@@ -173,7 +173,7 @@ int main(){
                 case 'x': // sair
                     break;
                 default:
-                    std::cout << "opcao inválido\n";
+                    std::cout << "comando inválido\n";
             }
         } catch (std::runtime_error& e) {
             std::cout << e.what() << "\n";
