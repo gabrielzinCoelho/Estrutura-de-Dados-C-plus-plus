@@ -11,5 +11,5 @@ Estrutura de Dados | Tópicos
 [Pilhas](pilha) | [Pilhas Encadeadas](pilha/pilhaEncadeada)     [Pilhas em Arrays](pilha/pilhaArr)
 [Filas](fila) | [Filas Encadeadas](fila/filaEncadeada/)     [Filas em Arrays (Circulares)](fila/filaArr/)
 [Heaps](heap) | [MaxHeaps](heap/maxHeap)        [MinHeaps](heap/minHeap)        [Torneios](heap/torneio)
-[Listas]() | [Listas Encadeadas]()      [Deques]()      [Vetores Expansíveis]()     [Sequence Set]()
+[Listas](lista) | [Listas Encadeadas]()      [Deques]()      [Vetores Expansíveis]()     [Sequence Set]()
 [Tabelas Hash]() | [Colisão por Encadeamento]()     [Colisão por Endereçamento Aberto]()
