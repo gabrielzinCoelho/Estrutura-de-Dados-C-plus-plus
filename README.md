@@ -6,7 +6,9 @@ Todos códigos foram baseados nas aulas e materiais disponibilizados pelos docen
 
 # Conteúdos
 
-`As estruturas de dados disponibilizadas neste repositório foram todas implementadas utilizando a abstração em TAD's, mais especificamente classes. Portanto, caso seja seu primeiro contato com esse paradigma de programação, recomendamos que comece por [aqui](tads).`
+> As estruturas de dados disponibilizadas neste repositório foram todas implementadas utilizando a abstração em TAD's, mais especificamente classes.
+
+> Portanto, caso seja seu primeiro contato com esse paradigma de programação, recomendamos que comece por [aqui](tads).
 
 
 Estrutura de Dados | Tópicos
