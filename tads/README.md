@@ -61,7 +61,8 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
     Segue o exemplo de uma inicialização em lista:
 
     ```
-    Animal::Animal(string nome, int idade, string raca, float peso) : nome(nome), idade(idade), raca(raca), peso(peso), consultas(nullptr), id(-1) {
+    Animal::Animal(string nome, int idade, string raca, float peso) : 
+        nome(nome), idade(idade), raca(raca), peso(peso), consultas(nullptr), id(-1) {
         
     }
     ```
