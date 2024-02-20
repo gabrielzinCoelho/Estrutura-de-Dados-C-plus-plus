@@ -56,15 +56,15 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 * Construtores permitem uma sintaxe alternativa para inicializar os atributos chamada **"inicialziação em lista"**. Nesse caso, o corpo do construtor é executado após a inicialização dos atributos em lista.
 
-Atributos definidos como constantes devem, obrigatoriamente, ser inicializados em lista.
+    Atributos definidos como constantes devem, obrigatoriamente, ser inicializados em lista.
 
-Segue o exemplo de uma inicialização em lista:
+    Segue o exemplo de uma inicialização em lista:
 
-```
-Animal::Animal(string nome, int idade, string raca, float peso) : nome(nome), idade(idade), raca(raca), peso(peso), consultas(nullptr), id(-1) {
-    
-}
-```
+    ```
+    Animal::Animal(string nome, int idade, string raca, float peso) : nome(nome), idade(idade), raca(raca), peso(peso), consultas(nullptr), id(-1) {
+        
+    }
+    ```
 
 ### Construtores de cópia
 
