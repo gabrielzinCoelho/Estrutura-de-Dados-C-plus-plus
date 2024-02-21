@@ -56,7 +56,9 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 * Construtores permitem uma sintaxe alternativa para inicializar os atributos chamada **"inicialziação em lista"**. Nesse caso, o corpo do construtor é executado após a inicialização dos atributos em lista.
 
-    Atributos definidos como constantes devem, obrigatoriamente, ser inicializados em lista.
+    Atributos constantes ou referências devem, obrigatoriamente, ser inicializados em lista.
+
+    Vetores ou estruturas sem construtores só podem ser inicializados diretamente;
 
     Segue o exemplo de uma inicialização em lista:
 
@@ -68,6 +70,24 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
     ```
 
 ### Construtores de cópia
+
+* Constrói um novo objeto a partir de um outro já existente, que pertence a mesma classe. Basicamente, se trata de um construtor que recebe como parâmetro um objeto da mesma classe, passado como referência (evitar recursão).
+
+* Compilador fornece um construtor de cópia padrão, o qual simplesmente faz uma cópia de todos os atributos do objeto passado como parâmetro.
+
+* Quando um objeto é passado como parâmetro de uma função por valor, o construtor de cópia é automaticamente invocado. 
+
+* Vale ressaltar a necessidade de fazer a sobrecarga do construtor de cópia quando o objeto possui campos dinamicamente alocados. Isso, devido ao fato de tais campos serem copiados e o novo objeto também passar a apontar para a mesma região de memória anteriormente alocada. Nesse caso, alterações indevidas podem ocorrer nessas regiões de memória ou até mesmo a desalocação dessas regiões após o objeto copiado encerrar seu ciclo de vida. O mesmo vale para operações de atribuição, que também passa a exigir a sobrecarga do operador de atribuição. 
+
+### Destrutores
+
+* São métodos especiais das classes e são indicados pelo nome da classe precedido pelo caractere **"~"**.
+
+* São invocados implicitamente quando um objeto é destruído.
+
+* Compilador também fornece um destrutor padrão, caso nenhum seja definido explicitamente (não executa nenhuma instrução).
+
+* Geralmente, os atributos da classe alocados dinâmicamente são desalocados nos destrutores, evitando uso indevido da memória.
 
 ## Sobrecarga de métodos
 
@@ -89,7 +109,7 @@ Tais métodos não possuem capacidade de alterar o valor de qualquer atributo do
 
 Comumente utilizado em métodos **"getters**".
 
-Segue o exemplo de um método do tipo **"const"**.
+Segue o exemplo de um método do tipo **"const"**:
 
 ```
 int getIdade(){
