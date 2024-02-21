@@ -77,7 +77,13 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 * Quando um objeto é passado como parâmetro de uma função por valor, o construtor de cópia é automaticamente invocado. 
 
-* Vale ressaltar a necessidade de fazer a sobrecarga do construtor de cópia quando o objeto possui campos dinamicamente alocados. Isso, devido ao fato de tais campos serem copiados e o novo objeto também passar a apontar para a mesma região de memória anteriormente alocada. Nesse caso, alterações indevidas podem ocorrer nessas regiões de memória ou até mesmo a desalocação dessas regiões após o objeto copiado encerrar seu ciclo de vida. O mesmo vale para operações de atribuição, que também passa a exigir a sobrecarga do operador de atribuição. 
+* Vale ressaltar a necessidade de fazer a sobrecarga do construtor de cópia quando o objeto possui campos dinamicamente alocados. 
+
+    Isso, devido ao fato de tais campos serem copiados e o novo objeto também passar a apontar para a mesma região de memória anteriormente alocada. 
+    
+    Nesse caso, alterações indevidas podem ocorrer nessas regiões de memória ou até mesmo a desalocação dessas regiões após o objeto copiado encerrar seu ciclo de vida. 
+    
+    O mesmo vale para operações de atribuição, que também passa a exigir a sobrecarga do operador de atribuição. 
 
 ### Destrutores
 
