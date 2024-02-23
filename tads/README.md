@@ -31,6 +31,7 @@ class Animal{
         Consulta consultas[5];
     public:
         Animal(string nome, int idade, string raca, float peso);
+        ~Animal();
         void novaConsulta();
         void imprimirDados();
         void imprimirConsultas();
@@ -45,6 +46,20 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 ## Construtores e Destrutores
 
 ### Construtores
+
+    ```
+    Animal::Animal(int id, string nome, int idade, string raca, float peso){
+
+        this->id = id;
+        this->nome = nome;
+        this->idade = idade;
+        this->raca = raca;
+        this->peso = peso;
+
+        consultas = new Consulta[5];
+
+    }
+    ```
 
 * São métodos especiais que possuem o **mesmo nome da classe** e são utilizados para **inicializar uma instância** da mesma.
 
@@ -63,8 +78,8 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
     Segue o exemplo de uma inicialização em lista:
 
     ```
-    Animal::Animal(string nome, int idade, string raca, float peso) : 
-        nome(nome), idade(idade), raca(raca), peso(peso), consultas(nullptr), id(-1) {
+    Animal::Animal(int id, string nome, int idade, string raca, float peso) : 
+        id(id), nome(nome), idade(idade), raca(raca), peso(peso), consultas(new Consulta[5]){
         
     }
     ```
@@ -87,6 +102,13 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 ### Destrutores
 
+    ```
+    Animal::~Animal(){
+
+        delete[] consultas;
+    }
+    ```
+
 * São métodos especiais das classes e são indicados pelo nome da classe precedido pelo caractere **"~"**.
 
 * São invocados implicitamente quando um objeto é destruído.
@@ -97,13 +119,134 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 ## Sobrecarga de métodos
 
+* C++ permite a criação de métodos com mesmo nome, porém assinaturas diferentes. 
+
+* Por assinatura diferente, diz-se um conjunto de parâmetros diferentes, que pode se tratar do número de parâmetros, do tipo deles, ou até mesmo da ordem em que são definidos.
+
+* Sobrecarga de métodos se estende, inclusive, para os métodos especiais das classes, como construtores e destrutores.
+
 ## Sobrecarga de operadores
+
+* C++ também permite a sobrecarga de operadores, o que permite alterar o funcionamento desses operadores dependendo dos argumentos fornecidos.
+
+* Nem todos operadores podem ser sobrecarregados.
+
+* Pelo menos um dos operandos deve ser um tipo de dado criado pelo usuário. 
+
+* Sobrecarga pode ser feita de duas formas:
+
+    * Método da classe:
+
+        Veja a criação de dois métodos da classe que sobrecarregam os operadores de comparação '>' e '<', respectivamente. Nesse caso, tais métodos retornam um booleano resultado da comparação da idade entre dois animais.
+
+        Os cabeçalhos são definidos no interior da classe:
+
+        ```
+        bool operator>(const Animal &a);
+        bool operator<(const Animal &a);
+        ```
+
+        ```
+        bool Animal::operator>(const Animal& a){
+            return idade > a.idade;
+        }
+
+        bool Animal::operator<(const Animal& a){
+            return idade < a.idade;
+        }
+        ```
+
+        Veja como é feita a chamada dos métodos sobrecarregados:
+
+        ```
+        Animal animal_1 (1, "Bolinha", 7, "Cachorro", 42.5); // idade: 7
+        Animal animal_2 (2, "Miau", 10, "Gato", 32.8); // idade: 10
+
+        cout << (animal_1 > animal_2) << "\n"; // False
+        cout << (animal_1 < animal_2) << "\n"; // True
+        ```
+
+        Implicitamente, tais métodos são invocados pelo objeto à esquerda do operador da seguinte forma:
+
+        ```
+        animal_1.operator>(animal_2);
+        animal_1.operator<(animal_2);
+        ```
+
+    * Função externa "amiga" da classe:
+
+        Observe que se tratam de funções externas à classe, mas que foram definidas como "amigas" da classe, permitindo, então, o acesso dessas funções aos atributos e métodos privados da classe.
+
+        Nesse caso, seria impossível sobrecarregar tais operadores via algum método da classe, visto que o operando esquerdo não se trata de um objeto. Logo, ele não pode ser invocado pelo objeto em questão.
+
+        Os cabeçalhos são definidos no interior da classe: 
+
+        ```
+        friend std::ostream & operator<<(std::ostream &output, const Animal& animal);
+        friend std::istream & operator>>(std::istream &input,Animal& animal);
+        ```
+
+        Segue a implementação dessas funções, as quais sobrecarregam os operadores utilizados em conjunto com os objetos de stream 'cin' e 'cout':
+
+        ```
+        std::ostream & operator<<(std::ostream &output, const Animal& animal){
+
+            output << "Nome: " << animal.nome << "\n";
+            output << "Id: " << animal.id << "\n";
+            return output;
+        }
+
+        std::istream & operator>>(std::istream &input, Animal& animal){
+
+            input >> animal.nome >> animal.id;
+            return input; 
+
+        }
+        ```
+
+        Veja como é feita a chamada das funções:
+
+        ```
+        Animal animal_1, animal_2;
+
+        std::cin >> animal_1 >> animal_2;
+        std::cout << animal_1 << animal_2;
+        ```
+
+        Note, também, que a referência aos objetos de stream 'cin' e 'cout' são retornadas ao final das operações, permitindo o encadeamento de operações.
+
+* Segue o exemplo da sobrecarga do operador de atribuição, nesse caso como um método da classe **Animal**:
+
+    ```
+    Animal& Animal::operator=(const Animal &a){
+        
+        id = a.id;
+        nome = a.nome;
+        idade = a.idade;
+        raca = a.raca;
+        peso = a.peso;
+
+        // uma nova região de memória é alocada e a cópia dos dados é salva nessa região
+        consultas = new Consulta[5];
+        std::copy(a.consultas, a.consultas + 5, consultas);
+
+        return *this;
+    }
+    ```
+
+    Observe que uma referência do próprio objeto é retornada, permitindo o encadeamento de atribuições.
+
+    ```
+    animal_1 = animal_2 = animal_3;
+    ```
 
 ## Extras
 
 ### Palavra chave this
 
 A palavra reservada **"this"** é usada para refenciar a própria instância quando algum de seus métodos é invocado. Ou seja, basicamente, se trata de um ponteiro que aponta para a própria instância.
+
+Passado como parâmetro, de forma implícita, em todos os métodos de uma classe (com exceção de métodos estáticos).
 
 Geralmente é utilizada em casos de ambiguidade entre os atributos da classe e os parâmetros da função.
 
@@ -118,7 +261,7 @@ Comumente utilizado em métodos **"getters**".
 Segue o exemplo de um método do tipo **"const"**:
 
 ```
-int getIdade(){
+int Animal::getIdade() const{
 
     // tal atribuição causaria um erro de compilação
     //idade = 10; 

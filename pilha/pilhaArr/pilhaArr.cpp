@@ -34,7 +34,7 @@ PilhaArr::PilhaArr(unsigned int capacidade) : capacidadeInicial(capacidade){
 }
 
 PilhaArr::~PilhaArr(){
-    delete dadoArr;
+    delete[] dadoArr;
 }
 
 void PilhaArr::limparTudo(){
@@ -42,7 +42,7 @@ void PilhaArr::limparTudo(){
     indexTopo = INDEX_NULO;
 
     if(capacidadeAtual != capacidadeInicial){
-         delete[] dadoArr;
+        delete[] dadoArr;
         dadoArr = new Dado[capacidadeInicial];
         capacidadeAtual = capacidadeInicial;
     }
