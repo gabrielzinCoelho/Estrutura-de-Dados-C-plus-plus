@@ -4,7 +4,7 @@ Os **tipos abstratos de dados** , TAD's, são uma maneira de definir um novo tip
 
 ## Programação Orientada a Objetos (POO)
 
-Programação orientada a objetos estabele um **novo paradigma** em que os problemas são abordados como **diversas entidades que interagem entre si**. Tais entidades são chamadas de **objetos**, os quais possuem seus **atributos** e **métodos** definidos por uma **classe** que os representam.
+Programação orientada a objetos estabele um **novo paradigma**, em que os problemas são abordados como **diversas entidades que interagem entre si**. Tais entidades são chamadas de **objetos**, os quais possuem seus **atributos** e **métodos** definidos por uma **classe** que os representam.
 
 Nesse sentido, vale ressaltar os quatro **pilares** que determinam o desenvolvimento orientado a objetos:
 
@@ -18,7 +18,7 @@ Nesse sentido, vale ressaltar os quatro **pilares** que determinam o desenvolvim
 
 Como dito anteriormente, classes são um tipo de TAD que definem entidades com **características e comportamentos similares**. As características do objeto são chamadas de **atributos da classe** e seus comportamentos de **métodos da classe**.
 
-Segue o exemplo da definição da classe **Animal**, que poderia ser encontrada em um sistema de hospital veterinário.
+Segue o exemplo da definição da classe **Animal**, que poderia ser encontrada em um sistema de hospital veterinário:
 
 ```
 class Animal{
@@ -69,7 +69,7 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 * Caso nenhum construtor seja definido, o compilador automaticamente define um construtor padrão, o qual não recebe nenhum parâmetro e também não faz nada. Dessa forma, é impossibilitado que algum objeto seja instanciado sem nenhuma inicialização.
 
-* Construtores permitem uma sintaxe alternativa para inicializar os atributos chamada **"inicialziação em lista"**. Nesse caso, o corpo do construtor é executado após a inicialização dos atributos em lista.
+* Construtores permitem uma sintaxe alternativa para inicializar os atributos chamada **"inicialização em lista"**. Nesse caso, o corpo do construtor é executado após a inicialização dos atributos em lista.
 
     Atributos constantes ou referências devem, obrigatoriamente, ser inicializados em lista.
 
@@ -125,6 +125,8 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
 * Sobrecarga de métodos se estende, inclusive, para os métodos especiais das classes, como construtores e destrutores.
 
+* Durante a chamado do método sobrecarregado, o compilador identifica aquele que é compatível com os parâmetros passados e, então, o executa.
+
 ## Sobrecarga de operadores
 
 * C++ também permite a sobrecarga de operadores, o que permite alterar o funcionamento desses operadores dependendo dos argumentos fornecidos.
@@ -145,6 +147,8 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
         bool operator>(const Animal &a);
         bool operator<(const Animal &a);
         ```
+
+        Veja a implementação dos métodos:
 
         ```
         bool Animal::operator>(const Animal& a){
