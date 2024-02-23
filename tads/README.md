@@ -179,7 +179,9 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
     * Função externa "amiga" da classe:
 
-        Observe que se tratam de funções externas à classe, mas que foram definidas como "amigas" da classe, permitindo, então, o acesso dessas funções aos atributos e métodos privados da classe.
+        Se tratam de funções externas à classe, mas que foram definidas como "amigas" da mesma, permitindo, então, o acesso dessas funções aos seus atributos e métodos privados.
+
+        Observe o exemplo no qual os operadores utilizados em conjunto com os objetos de stream são sobrecarregados.
 
         Nesse caso, seria impossível sobrecarregar tais operadores via algum método da classe, visto que o operando esquerdo não se trata de um objeto. Logo, ele não pode ser invocado pelo objeto em questão.
 
@@ -190,7 +192,7 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
         friend std::istream & operator>>(std::istream &input,Animal& animal);
         ```
 
-        Segue a implementação dessas funções, as quais sobrecarregam os operadores utilizados em conjunto com os objetos de stream 'cin' e 'cout':
+        Segue a implementação dessas funções:
 
         ```
         std::ostream & operator<<(std::ostream &output, const Animal& animal){
@@ -204,7 +206,6 @@ Além disso, apenas observando os métodos da classe podemos inferir seu comport
 
             input >> animal.nome >> animal.id;
             return input; 
-
         }
         ```
 
