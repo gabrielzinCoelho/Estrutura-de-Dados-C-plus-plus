@@ -12,6 +12,13 @@ Portanto, caso seja seu primeiro contato com esse paradigma de programação, re
 
 <br />
 
+> Ao longo da disciplina, para se verificar o aprendizado dos alunos, os diversos conteúdos abordados são aplicados em exercícios disponibilizados na plataforma **[Dredd](dredd.dac.ufla.br/)**.
+<br /><br />
+
+Você pode conferir uma das possíveis soluções para tais exercícios **[aqui](exerciciosDredd)**.
+
+<br />
+
 Estrutura de Dados | Tópicos
 :-- | :--:
 [Pilhas](pilha) | [Pilhas Encadeadas](pilha/pilhaEncadeada)     [Pilhas em Arrays](pilha/pilhaArr)

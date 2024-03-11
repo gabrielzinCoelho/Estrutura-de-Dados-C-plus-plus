@@ -253,7 +253,7 @@ A palavra reservada **"this"** é usada para refenciar a própria instância qua
 
 Passado como parâmetro, de forma implícita, em todos os métodos de uma classe (com exceção de métodos estáticos).
 
-Geralmente é utilizada em casos de ambiguidade entre os atributos da classe e os parâmetros da função.
+Geralmente, é utilizada em casos de ambiguidade entre os atributos da classe e os parâmetros da função.
 
 ### Métodos do tipo const
 
