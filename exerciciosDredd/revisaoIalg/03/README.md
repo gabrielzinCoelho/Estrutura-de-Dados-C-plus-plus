@@ -9,13 +9,15 @@ Seu programa deverá exibir no dispositivo de saída padrão, para cada palavra 
 ### Entradas
 
 ```
-1. Três listas de strings. Cada lista será fornecida em uma linha específica, com a quantidade de palavras no início.
+1. Três listas de strings. Cada lista será fornecida em uma linha específica, com a quantidade de palavras 
+no início.
 ```
 
 ### Saídas
 
 ```
-1. Sequência de valores que denotam se cada palavra da terceira lista apareceu em nenhuma, uma ou nas duas listas iniciais.
+1. Sequência de valores que denotam se cada palavra da terceira lista apareceu em nenhuma, uma ou nas duas 
+listas iniciais.
 ```
 
 ### Exemplo de Entrada
