@@ -1,7 +1,7 @@
 # Exercícios Dredd
 
 1. [Vetores - Números primos no vetor (tamanho fixo)](01/)
-1. [Vetores - União de vetores (alocação dinâmica)]()
+1. [Vetores - União de vetores (alocação dinâmica)](02/)
 1. [Vetor - Quantidade de ocorrências em vetores de strings]()
 1. [Vetores - Preenchimento ordenado]()
 1. [Vetores - Diferença - A invenção de Lex Luthor]()
