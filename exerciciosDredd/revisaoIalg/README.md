@@ -5,7 +5,7 @@
 1. [Vetor - Quantidade de ocorrências em vetores de strings](03/)
 1. [Vetores - Preenchimento ordenado](04/)
 1. [Vetores - Diferença - A invenção de Lex Luthor](05/)
-1. [Matrizes - Operações com matrizes]()
+1. [Matrizes - Operações com matrizes](06/)
 1. [Matrizes - Produto de matrizes]()
 1. [Matrizes - Minimax]()
 1. [Matrizes - Xadrez - Torre]()
