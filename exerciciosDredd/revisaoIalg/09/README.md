@@ -8,7 +8,7 @@ O tabuleiro será dado como uma matriz de 0s, 1s e 2s. Zeros representam posiç�
 
 A torre pode ser movida na vertical ou na horizontal quantas casas quiser, mas não pode passar por cima de outra peça. As posições com outras peças que a torre pode tomar são posições ditas "ameaçadas" pela torre. A imagem abaixo mostra uma torre que ameça outras 3 peças (marcadas com um X).
 
-<img src="./xadrez.png" width=100 height=100>
+<img src="./xadrez.png" width=400 height=400>
 
 Seu programa deve escrever as coordenadas (linha e coluna, nesta ordem) de cada peça (valor 2 na matriz) ameaçada pela torre (valor 1 na matriz).
 
