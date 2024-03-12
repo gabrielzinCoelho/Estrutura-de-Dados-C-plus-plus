@@ -13,7 +13,9 @@ Faça um programa para receber nove números inteiros positivos, armazená-los e
 ### Saídas
 
 ```
-1. Sequência de números primos e suas respectivas posições (índices no vetor). Obs.: Aqueles números que forem primos e suas respectivas posições deverão ser exibidos aos pares.
+1. Sequência de números primos e suas respectivas posições (índices no vetor). 
+
+Obs.: Aqueles números que forem primos e suas respectivas posições deverão ser exibidos aos pares.
 ```
 
 ### Exemplo de Entrada
