@@ -24,10 +24,10 @@ O programa deve exibir o nome e a distância total percorrida pelo atleta mais v
 ### Saídas
 
 ```
-1. O nome e a distância total percorrida pelo atleta mais velho do sexo masculino (se nenhum homem for registrado, 
-exibir somente -1).
-2. O nome e a idade do atleta que participou de mais dias de treino (em caso de empate, considerar o que encontrar 
-primeiro).
+1. O nome e a distância total percorrida pelo atleta mais velho do sexo masculino (se nenhum homem for 
+registrado, exibir somente -1).
+2. O nome e a idade do atleta que participou de mais dias de treino (em caso de empate, considerar o que 
+encontrar  primeiro).
 3. O nome e o tempo médio diário de treino de cada atleta.
 ```
 
