@@ -22,7 +22,8 @@ Operações de troca a serem realizadas (considerando índices que começam em 1
 ### Saídas
 
 ```
-1. A matriz 10 x 10 resultante das devidas operações descritas em 1, 2, 3, e 4 (utilizando um índice numérico antes de exibir cada matriz).
+1. A matriz 10 x 10 resultante das devidas operações descritas em 1, 2, 3, e 4 (utilizando um índice numérico 
+antes de exibir cada matriz).
 ```
 
 ### Exemplo de Entrada
