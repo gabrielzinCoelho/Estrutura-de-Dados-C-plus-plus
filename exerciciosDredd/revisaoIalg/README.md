@@ -1,6 +1,6 @@
 # Exercícios Dredd
 
-1. [Vetores - Números primos no vetor (tamanho fixo)]()
+1. [Vetores - Números primos no vetor (tamanho fixo)](01/)
 1. [Vetores - União de vetores (alocação dinâmica)]()
 1. [Vetor - Quantidade de ocorrências em vetores de strings]()
 1. [Vetores - Preenchimento ordenado]()
