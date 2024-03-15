@@ -13,8 +13,8 @@ Leia um vetor de números inteiros de um arquivo texto "entrada.txt". O número 
 ### Saídas
 
 ```
-1. Arquivo texto saida.txt contendo até 100 números inteiros, com os dados escritos em ordem inversa ao de leitura 
-do arquivo entrada.txt.
+1. Arquivo texto saida.txt contendo até 100 números inteiros, com os dados escritos em ordem inversa ao de 
+leitura  do arquivo entrada.txt.
 ```
 
 ### Exemplo de Entrada (entrada.txt)
