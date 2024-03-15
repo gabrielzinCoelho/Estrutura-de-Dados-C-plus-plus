@@ -15,9 +15,8 @@ Seu programa deverá usar um registro para guardar o tempo (ponto flutuante) dos
 ### Saídas
 
 ```
-1. A diferença de tempo do primeiro colocado para cada um dos demais oito atletas (na ordem em 
-que os dados foram recebidos). Obs: no lugar do primeiro colocado deve ser exibido o tempo 
-dele na prova.
+1. A diferença de tempo do primeiro colocado para cada um dos demais oito atletas (na ordem em  que os
+dados foram recebidos). Obs: no lugar do primeiro colocado deve ser exibido o tempo  dele na prova.
 ```
 
 ### Exemplo de Entrada
