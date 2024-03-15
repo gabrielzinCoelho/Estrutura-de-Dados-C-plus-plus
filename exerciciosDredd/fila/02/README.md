@@ -11,7 +11,8 @@ Faça a implementação de uma fila circular fazendo com que a inserção (méto
 ```
 Inicialmente, o programa lê um número inteiro que é capacidade da fila a ser criada.
 
-Depois, o programa lê códigos de comandos a executar. Sempre um caractere identificando o comando seguido dos parâmetros necessários para executar o comando, se houverem. Os códigos de comandos são:
+Depois, o programa lê códigos de comandos a executar. Sempre um caractere identificando o comando seguido dos
+parâmetros necessários para executar o comando, se houverem. Os códigos de comandos são:
 
     . t - para terminar a execução do programa
     . e - para enfileirar um valor - seguido do valor (número inteiro)
