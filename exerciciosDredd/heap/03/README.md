@@ -8,9 +8,10 @@ Com seus conhecimentos de Estrutura de Dados, implemente uma estrutura para defi
 
 Comandos de utilização do programa:
 
-i: inserir um novo processo, seguido do código (número natural) e da prioridade (número inteiro) do processo.
-o: obter o processo que deverá ser tratado. Causa a retirada do processo mais prioritário do sistema e o programa escreve seu código e sua prioridade. Caso não tenha um processo para ser obtido, o programa escreve "Nao encontrado".
-s: sair do programa.
+* i: inserir um novo processo, seguido do código (número natural) e da prioridade (número inteiro) do processo.
+* o: obter o processo que deverá ser tratado. Causa a retirada do processo mais prioritário do sistema e o programa escreve seu código e sua prioridade. Caso não tenha um processo para ser obtido, o programa escreve "Nao encontrado".
+* s: sair do programa.
+
 No início da execução, o programa lê a capacidade máxima de processos para trabalhar. Em seguida começa a processar os comandos acima.
 
 ### Exemplo de Entrada
