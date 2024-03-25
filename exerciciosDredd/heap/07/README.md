@@ -47,5 +47,6 @@ A entrada deve conter o número de participantes seguido dos participantes. A sa
 
 ### Exemplo de Saída
 
-```13
+```
+13
 ```
