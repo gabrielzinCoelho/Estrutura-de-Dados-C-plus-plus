@@ -12,4 +12,4 @@ Para que as operações ocorram de maneira adequada, a fila armazena os **indíc
 
 Um ponto importante a ser observado é que implementações de filas em arrays utilizam do conceito de **filas circulares**. Dessa forma, após sucessivas remoções e inserções, é possível que o indíce de fim se encontre em uma posição anterior ao indíce de início. Isso é obtido da seguinte forma: toda vez que algum dos indíces (início ou fim) avance uma posição, basta **calcular o mod do novo valor**.
 
-Além disso, vale ressaltar a importância do atributo **tamanho** nesse contexto: não é possível calcular (sem ter conhecimento da última operação feita sobre a estrutura) o número de elementos da fila utilizando apenas os indíces de início e fim.
+Sendo assim, vale ressaltar um adendo em relação ao cálculo do tamanho da fila: é preciso realizar uma verificação da ordem em que esses dois índices se encontram. Dessa forma, em algumas implementações, o custo de manutenibilidade do atributo tamanho se torna justificável.
