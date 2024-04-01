@@ -175,5 +175,7 @@ int main(){
     
     MinHeap heap(arr, n);
 
+    delete[] arr;
+
     return 0;
 }
