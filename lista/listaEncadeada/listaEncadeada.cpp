@@ -69,11 +69,12 @@ Noh* Lista::iteradorBuscaValor(const Dado &d){
 
     Noh* aux{inicio}, *anterior{nullptr};
 
-    while(aux != nullptr){
-        if(aux){}
+    while(aux != nullptr && aux->dado != d){
+        anterior = aux;
+        aux = aux->proximo;
     }
 
-    return aux;
+    return aux == nullptr ? nullptr : anterior;
 }
 
 void Lista::inserirListaVazia(const Dado& d){
@@ -119,6 +120,43 @@ void Lista::inserirPosicao(const Dado& d, int pos){
         novo->proximo = anteriorPos->proximo;
         anteriorPos->proximo = novo;
     }
+}
+
+Dado Lista::removerInicio(){
+    if(vazia())
+        throw std::runtime_error("Erro: Lista Vazia.\n");
+
+    Noh* aux = inicio;
+    Dado temp{inicio->dado};
+
+    inicio = inicio->proximo;
+    delete aux;
+    tamanho--;
+
+    if(vazia())
+        fim = nullptr;
+
+    return temp;
+}
+
+Dado Lista::removerFim(){
+    if(vazia())
+        throw std::runtime_error("Erro: Lista Vazia.\n");
+
+    Dado temp{fim->dado};
+    Noh *aux;
+    if(tamanho == 1){
+        inicio = aux = nullptr;
+    }else{
+        aux = iteradorBuscaPosicao(tamanho - 2);
+        aux->proximo = nullptr;
+    }
+
+    delete fim;
+    fim = aux;
+    tamanho--;
+
+    return temp;
 }
 
 int main(){
