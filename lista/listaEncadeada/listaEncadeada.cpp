@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 #include <stdexcept>
 
 typedef int Dado;
@@ -17,22 +18,27 @@ class Lista{
         Noh *inicio, *fim;
         int tamanho;
         void inserirListaVazia(const Dado &d);
-        Noh* iteradorBuscaValor(const Dado &d);
+        std::pair<Noh*, Noh*> iteradorBuscaValor(const Dado &d);
         Noh* iteradorBuscaPosicao(int pos);
     public:
         Lista();
         ~Lista();
         void limparLista();
         bool vazia();
+
         Dado removerInicio();
         Dado removerFim();
-        Dado removerValor();
-        Dado removerPosicao();
+        Dado removerValor(const Dado& d);
+        Dado removerPosicao(int pos);
+
         void inserirInicio(const Dado &d);
         void inserirFim(const Dado &d);
         void inserirPosicao(const Dado &d, int pos);
-        Dado buscaValor();
-        Dado buscaPosicao();
+
+        Dado buscaValor(const Dado &d);
+        Dado buscaPosicao(int pos);
+
+        void imprimirLista();
 };
 
 Lista::Lista() : inicio(nullptr), fim(nullptr), tamanho(0) {}
@@ -50,7 +56,7 @@ bool Lista::vazia(){
     return !tamanho;
 }
 
-Noh* Lista::iteradorBuscaPosicao(int pos){
+Noh* Lista::iteradorBuscaPosicao(int pos){ // retorna ponteiro para uma posição específica da lista
     if(pos < 0 || pos > (tamanho - 1))
         throw std::runtime_error("Erro: posição de busca invalida.\n");
     
@@ -65,7 +71,7 @@ Noh* Lista::iteradorBuscaPosicao(int pos){
     return aux;
 }
 
-Noh* Lista::iteradorBuscaValor(const Dado &d){
+std::pair<Noh*, Noh*> Lista::iteradorBuscaValor(const Dado &d){ // retorna ponteiro para valor encontrado e sua posição anterior, caso exista
 
     Noh* aux{inicio}, *anterior{nullptr};
 
@@ -74,7 +80,10 @@ Noh* Lista::iteradorBuscaValor(const Dado &d){
         aux = aux->proximo;
     }
 
-    return aux == nullptr ? nullptr : anterior;
+    if(aux == nullptr)
+        throw std::runtime_error("Erro: valor não encontrado na lista.\n");
+
+    return std::make_pair(anterior, aux);
 }
 
 void Lista::inserirListaVazia(const Dado& d){
@@ -119,6 +128,7 @@ void Lista::inserirPosicao(const Dado& d, int pos){
         Noh* anteriorPos = iteradorBuscaPosicao(pos - 1);
         novo->proximo = anteriorPos->proximo;
         anteriorPos->proximo = novo;
+        tamanho++;
     }
 }
 
@@ -144,19 +154,87 @@ Dado Lista::removerFim(){
         throw std::runtime_error("Erro: Lista Vazia.\n");
 
     Dado temp{fim->dado};
-    Noh *aux;
+    Noh *aux{fim};
     if(tamanho == 1){
-        inicio = aux = nullptr;
+        inicio = fim = nullptr;
     }else{
-        aux = iteradorBuscaPosicao(tamanho - 2);
-        aux->proximo = nullptr;
+        fim = iteradorBuscaPosicao(tamanho - 2);
+        fim->proximo = nullptr;
     }
 
-    delete fim;
-    fim = aux;
+    delete aux;
     tamanho--;
 
     return temp;
+}
+
+Dado Lista::removerPosicao(int pos){
+
+    Dado temp;
+
+    if(pos < 0 || pos >= tamanho)
+        throw std::runtime_error("Erro: posição de remocao invalida.\n");
+
+    if(pos == 0)
+        temp = removerInicio();
+    else if(pos == tamanho - 1)
+        temp = removerFim();
+    else{
+
+        Noh* anterior{iteradorBuscaPosicao(pos - 1)}, *aux{anterior->proximo};
+
+        temp = aux->dado;
+        anterior->proximo = aux->proximo;
+        delete aux;
+        tamanho--;
+    }
+
+    return temp;
+
+}
+
+Dado Lista::removerValor(const Dado& d){
+    if(vazia())
+        throw std::runtime_error("Erro: Lista Vazia.\n");
+    
+    std::pair<Noh*, Noh*> buscaValor;
+
+    try{
+        buscaValor = iteradorBuscaValor(d);
+    }catch(std::runtime_error &e){
+        throw std::runtime_error("Erro: valor para remocao invalido.\n");
+    }
+        
+    Noh* anterior{buscaValor.first}, *aux{buscaValor.second};
+    Dado temp;
+
+    if(inicio == aux)
+        temp = removerInicio();
+    else{
+    
+        temp = aux->dado;
+        anterior->proximo = aux->proximo;
+        delete aux;
+        tamanho--;
+    }
+
+    return temp;
+}
+
+Dado Lista::buscaValor(const Dado &d){
+    return iteradorBuscaValor(d).second->dado;
+}
+Dado Lista::buscaPosicao(int pos){
+    return iteradorBuscaPosicao(pos)->dado;
+}
+
+void Lista::imprimirLista(){
+    
+    Noh *aux{inicio};
+    while(aux != nullptr){
+        std::cout << aux->dado << "\n";
+        aux = aux->proximo;
+    }
 }
 
 int main(){
