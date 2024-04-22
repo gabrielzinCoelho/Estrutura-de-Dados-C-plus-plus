@@ -15,7 +15,7 @@ class Noh{
         Noh *proximo;
         Elemento elemento;
     public:
-        Noh(Elemento e) : elemento(e), proximo(nullptr) {}
+        Noh(const Elemento &e) : elemento(e), proximo(nullptr) {}
 };
 
 class Lista{
@@ -28,7 +28,7 @@ class Lista{
         Lista();
         ~Lista();
         int getTamanho();
-        void insereLista(Elemento e);
+        void insereLista(const Elemento &e);
         Dado removeDado(int chave);
         Dado buscaDado(int chave);
         bool verificaOcorrencia(int chave);
@@ -60,7 +60,7 @@ int Lista::getTamanho(){
     return tamanho;
 }
 
-void Lista::insereLista(Elemento e){ // insercao inicio devido evita necessidade do ponteiro fim
+void Lista::insereLista(const Elemento &e){ // insercao inicio devido evita necessidade do ponteiro fim
     Noh* novo = new Noh(e);
     
     if(!vazia())
