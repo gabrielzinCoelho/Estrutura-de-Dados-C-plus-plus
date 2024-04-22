@@ -11,7 +11,7 @@
 
 **Tabela Hash** é uma estrutura de dados que, em um caso ideal, por meio de uma **função hash**, a qual associa para uma determinada **chave** um **índice no array**, permite a busca por elementos em ordem constante $0(1)$ (**acesso direto à posição**).
 
-Essa maior eficiência na busca é acompanhada de **maior uso de memória**, visto que a estrutura se descaracteriza com ocupação acima de 75% (o tratamento de colisões se torna demasiado).
+Essa maior eficiência na busca é acompanhada de **maior uso de memória**, visto que a estrutura se descaracteriza com ocupação acima de 75% (o tratamento de colisões se torna demasiadamente custoso).
 
 A função de hash mais básica utilizada é o cálculo do **mod da chave em relação ao tamanho do array**, que retorna sempre um valor entre 0 e (tamanho - 1), o qual é utilizado como índice de acesso no array.
 
