@@ -32,6 +32,7 @@ class Lista{
         Dado removeDado(int chave);
         Dado buscaDado(int chave);
         bool verificaOcorrencia(int chave);
+        void imprimirLista();
 };
 
 Lista::Lista() : inicio(nullptr), tamanho(0){}
@@ -91,6 +92,7 @@ Dado Lista::removeDado(int chave){
     
     temp = aux->elemento.dado;
     delete aux;
+    tamanho--;
 
     return temp;
 
@@ -118,17 +120,29 @@ bool Lista::verificaOcorrencia(int chave){
     return aux != nullptr;
 }
 
+void Lista::imprimirLista(){
+    Noh *aux{inicio};
+    std::string sep;
+    while(aux != nullptr){
+        sep = aux->proximo == nullptr ? "" : " -> ";
+        std::cout << aux->elemento.chave << sep;
+        aux = aux->proximo;
+    }
+    std::cout << "\n";
+}
+
 class Hash{
     private:
         Lista *tabela;
         int capacidade;
         int funcaoHash(int chave);
     public:
-        Hash(int capacidade = 19);
+        Hash(int capacidade = 7);
         ~Hash();
         void insere(Elemento e);
         Dado remove(int chave);
         Dado busca(int chave);
+        void imprimirTabela();
 };
 
 Hash::Hash(int capacidade){
@@ -142,7 +156,7 @@ Hash::~Hash(){
 }
 
 int Hash::funcaoHash(int chave){
-    return chave % capacidade;
+    return ((chave % capacidade) + capacidade) % capacidade;
 }
 
 void Hash::insere(Elemento e){
@@ -150,7 +164,7 @@ void Hash::insere(Elemento e){
     Lista* listaPtr = tabela + funcaoHash(e.chave);
 
     if(listaPtr->verificaOcorrencia(e.chave))
-        throw std::runtime_error("Elemento já existente na tabela hash.");
+        throw std::runtime_error("Elemento " + std::to_string(e.chave) + " já existente na tabela hash.");
 
     listaPtr->insereLista(e);
 }
@@ -159,7 +173,7 @@ Dado Hash::remove(int chave){
     try{
         tabela[funcaoHash(chave)].removeDado(chave);
     }catch(std::runtime_error &e){
-        throw std::runtime_error("Elemento não encontrado na tabela hash.");
+        throw std::runtime_error("Elemento " + std::to_string(chave) + " não encontrado na tabela hash.");
     }
 
 }
@@ -167,11 +181,66 @@ Dado Hash::busca(int chave){
     try{
         return tabela[funcaoHash(chave)].buscaDado(chave);
     }catch(std::runtime_error &e){
-        throw std::runtime_error("Elemento não encontrado na tabela hash.");
+        throw std::runtime_error("Elemento " + std::to_string(chave) + " não encontrado na tabela hash.");
     }
 }
 
+void Hash::imprimirTabela(){
+
+    std::cout << "******************\n";
+
+    for(int i{0}; i<capacidade; i++){
+        if(tabela[i].getTamanho() > 0)
+            tabela[i].imprimirLista();
+        else
+            std::cout << "*\n";
+    }
+
+    std::cout << "******************\n";
+
+}
+
 int main(){
+
+    const int numChaves = 20, numBusca = 3, numRemocao = 5;
+    Hash hash(7);
+    Elemento elemento;
+    int chaves[numChaves] = {4, 223, -2, 24, 31, 123, 147, 19, 19, 0, 3, 17, 7, 2, 237, 298, 172, 78, 55, -28};
+    int chavesBusca[numBusca] = {-2, 123, 999};
+    int chavesRemocao[numRemocao] = {4, 19, -2, 0, 0};
+    bool fim{false}, printLista(true);
+
+    int i{-1}, j{-1}, k{-1};
+
+    while(!fim){
+        try{
+
+            while(++i < numChaves){
+                elemento.chave = chaves[i];
+                elemento.dado = chaves[i];
+                hash.insere(elemento);
+            }
+
+            if(printLista){
+                hash.imprimirTabela();
+                printLista = false;
+            }
+            while(++j < numBusca){
+                std::cout << "Buscar " << chavesBusca[j] << ": \n";
+                std::cout << hash.busca(chavesBusca[j]) << "\n";
+            }
+            while(++k < numRemocao){
+                std::cout << "Remover " << chavesRemocao[k] << ": \n";
+                hash.remove(chavesRemocao[k]);
+                hash.imprimirTabela();
+            }
+
+            fim = true;
+
+        }catch(std::runtime_error &e){
+            std::cout << e.what() << "\n";
+        }
+    }
 
     return 0;
 }
