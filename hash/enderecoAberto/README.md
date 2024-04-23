@@ -14,8 +14,8 @@ O mesmo cuidado deve ser aplicado também às remoções. Nesse caso, ao remover
 
 1. Deslocamento dos dados para a posição desocupada.
 
-O deslocamento dos dados para a posição desocupada exige a verificação de, enquanto não se retorna à posição inicial ou chega-se em uma posição vazia, se o elemento não deve ser reposicionado. Caso determinado elemento se encontre em uma posição correspondente ao cálculo de sua função hash, então ele não deve ser reposicionado. 
+    O deslocamento dos dados para a posição desocupada exige a verificação de, enquanto não se retorna à posição inicial ou chega-se em uma posição vazia, se o elemento não deve ser reposicionado. Caso determinado elemento se encontre em uma posição correspondente ao cálculo de sua função hash, então ele não deve ser reposicionado. 
 
 1. Marcar a posição livre como disponível para uso, utilizando um valor simbólico, como -1, para tal. Assim, podemos diferenciar uma posição que sempre esteve livre de uma que se tornou após a remoção de um elemento que a ocupava.
 
-Após um grande número de remoções, essa estratégia começa a comprometer a eficiência da busca, sendo necessário realizar a reinserção dos elementos atuais.
+    Após um grande número de remoções, essa estratégia começa a comprometer a eficiência da busca, sendo necessário realizar a reinserção dos elementos atuais.
