@@ -26,4 +26,4 @@ Estrutura de Dados | Tópicos
 [Tabelas Hash](hash) | [Colisão por Encadeamento](hash/encadeamento)     [Colisão por Endereçamento Aberto](hash/enderecoAberto)
 [Árvores Binárias de Busca](/arvores/abb) | [Árvores Binárias de Busca](/arvores/abb/abb)   [Tries](arvores/abb/tries)
 [Árvores Balanceadas](/arvores/balanceadas) | [AVL](/arvores/balanceadas/avl)      [Árvores Rubro-Negras](/arvores/balanceadas/rb)
-[Árvores B](/arvores/B) | [Árvores 2-3](/)       [Árvores 2-3-4](/)     [Árvores B](/)     [Árvores B+](/)     [[Árvores B*](/)]
+[Árvores B](/arvores/B) | [Árvores 2-3](/)       [Árvores 2-3-4](/)     [Árvores B](/)     [Árvores B+](/)     [Árvores B*](/)
