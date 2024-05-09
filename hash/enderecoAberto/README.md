@@ -14,7 +14,27 @@ O mesmo cuidado deve ser aplicado também às remoções. Nesse caso, ao remover
 
 1. Deslocamento dos dados para a posição desocupada.
 
-    O deslocamento dos dados para a posição desocupada exige a verificação de, enquanto não se retorna à posição inicial ou chega-se em uma posição vazia, se o elemento não deve ser reposicionado. Caso determinado elemento se encontre em uma posição correspondente ao cálculo de sua função hash, então ele não deve ser reposicionado. 
+    O deslocamento dos dados para a posição desocupada exige a verificação de, enquanto não se retorna à posição inicial ou chega-se em uma posição vazia, se o elemento não deve ser reposicionado. Caso determinado elemento se encontre em uma posição correspondente ao cálculo de sua função hash, então ele não deve ser reposicionado.
+
+    Veja o pseudocódigo para uma possível implementação de tabela hash com endereçamento aberto e remoção por meio do deslocamento dos elementos:
+
+    ```
+    function remove(key)
+    i := find_slot(key)
+    if slot[i] is unoccupied
+        return   // key is not in the table
+    j := i
+    loop
+        j := (j+1) modulo num_slots
+        if slot[j] is unoccupied
+            exit loop
+        k := hash(slot[j].key) modulo num_slots
+        if (j > i and (k <= i or k > j)) or
+            (j < i and (k <= i and k > j)) (note 2)
+            slot[i] := slot[j]
+            i := j
+    mark slot[i] as unoccupied
+    ```
 
 1. Marcar a posição livre como disponível para uso, utilizando um valor simbólico, como -1, para tal. Assim, podemos diferenciar uma posição que sempre esteve livre de uma que se tornou após a remoção de um elemento que a ocupava.
 
